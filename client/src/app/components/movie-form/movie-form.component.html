@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Película</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <form >
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" name="titleP" [(ngModel)]="movie.mov_title" class="form-control" placeholder="Titulo de la pelicula">
+                    </div>    
+                     <div class="form-group">
+                        <input type="text" name="year" [(ngModel)]="movie.mov_year" class="form-control" placeholder="Año">
+                     </div>
+                    <div class="form-group">
+                        <input type="text" name="time" [(ngModel)]="movie.mov_time" class="form-control" placeholder="Duración">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="leg" [(ngModel)]="movie.mov_lang" class="form-control" placeholder="Idioma">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="dataestreno" [(ngModel)]="movie.mov_dt_rel" class="form-control" placeholder="Fecha de estreno">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="country" [(ngModel)]="movie.mov_rel_country" class="form-control" placeholder="País de estreno">
+                    </div>
+                </div>
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="saveNewMovie()">Save changes</button>
+                  </div>
+              </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
