@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/Movies';
 import { MoviesService } from '../../services/movies.service'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-movie-form',
   templateUrl: './movie-form.component.html',
   styleUrls: ['./movie-form.component.css']
 })
+
+
+
 export class MovieFormComponent implements OnInit {
 
   movie: Movie = {
@@ -20,17 +24,21 @@ export class MovieFormComponent implements OnInit {
 };
 
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService, private router:Router) { }
 
   ngOnInit(): void {
+
   }
+
+  
 
   saveNewMovie(){
     delete this.movie.mov_id;
+
     this.moviesService.saveMovie(this.movie)
       .subscribe(
         res => {
-          console.log(res);
+          window.location.reload();
         },
         err => console.error(err)
       );

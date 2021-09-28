@@ -22,7 +22,7 @@
         <td>{{movie.mov_dt_rel}}</td>
         <td>{{movie.mov_rel_country}}</td>
         <td>
-            <button class="btn btn-info"><i class="fas fa-edit" style="color: white;"></i></button>
+            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit" style="color: white;"></i></button>
             <button class="btn btn-danger" (click)="deleteMovies(movie.mov_id)"><i class="fa fa-trash-alt"></i></button>
         </td>
       </tr>
