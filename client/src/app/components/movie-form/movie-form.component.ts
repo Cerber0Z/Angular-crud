@@ -23,11 +23,12 @@ export class MovieFormComponent implements OnInit {
     mov_rel_country: ''
 };
 
+edit: boolean = false;
 
   constructor(private moviesService: MoviesService, private router:Router) { }
 
   ngOnInit(): void {
-
+    
   }
 
   
@@ -43,5 +44,7 @@ export class MovieFormComponent implements OnInit {
         err => console.error(err)
       );
   }
+
+  
 
 }

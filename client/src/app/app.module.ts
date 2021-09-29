@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieFormComponent } from './components/movie-form/movie-form.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { EditarMovieComponent } from './components/editar-movie/editar-movie.component';
 
 import { MoviesService } from './services/movies.service'
 @NgModule({
   declarations: [
     AppComponent,
     MovieFormComponent,
-    MovieListComponent
+    MovieListComponent,
+    EditarMovieComponent
   ],
   imports: [
     BrowserModule,

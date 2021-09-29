@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const movieRoutes_1 = __importDefault(require("./routes/movieRoutes"));
 //hola
 class Server {
@@ -23,8 +23,10 @@ class Server {
         this.app.use(express_1.default.urlencoded({ extended: false }));
     }
     routes() {
-        this.app.use('/', indexRoutes_1.default);
         this.app.use('/appi/movie', movieRoutes_1.default); //prefijo
+        this.app.get('*', (req, res) => {
+            res.sendFile(path_1.default.join(__dirname, 'public/index.html'));
+        });
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -1,4 +1,5 @@
 import express, {Application} from 'express';
+import path from 'path';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -24,8 +25,11 @@ class Server {
     }
 
     routes(): void {
-        this.app.use('/',indexRoutes);
+    
         this.app.use('/appi/movie',movieRoutes); //prefijo
+        this.app.get('*', (req, res) =>{
+            res.sendFile(path.join(__dirname, 'public/index.html'));
+        })
     }
 
     start(): void {

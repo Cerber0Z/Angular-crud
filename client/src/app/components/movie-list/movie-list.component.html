@@ -22,13 +22,59 @@
         <td>{{movie.mov_dt_rel}}</td>
         <td>{{movie.mov_rel_country}}</td>
         <td>
-            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit" style="color: white;"></i></button>
+            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModalLabel2"  (click)="editMovie(movie.mov_id)"><i class="fas fa-edit" style="color: white;"></i></button>
             <button class="btn btn-danger" (click)="deleteMovies(movie.mov_id)"><i class="fa fa-trash-alt"></i></button>
         </td>
+               <!-- Modal editar -->
+  <div class="modal fade" id="exampleModalLabel2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Película</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <form >
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" name="title" [(ngModel)]="title" class="form-control" placeholder="Titulo de la pelicula" ng-required="titleP">
+                    </div>    
+                     <div class="form-group">
+                        <input type="number" name="year" [(ngModel)]="year"  class="form-control" placeholder="Año">
+                     </div>
+                    <div class="form-group">
+                        <input type="number" name="time" [(ngModel)]="time" class="form-control" placeholder="Duración">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="leg"  [(ngModel)]="leg"   class="form-control" placeholder="Idioma">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="dataestreno" [(ngModel)]="dataestreno"  class="form-control" placeholder="Fecha de estreno">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="country" [(ngModel)]="country" class="form-control" placeholder="País de estreno">
+                    </div>
+                </div>
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="updateMovie()" >Editar</button>
+                  </div>
+              </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
       </tr>
+
     </tbody>
+    
   </table>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
   </button>
+  
+
+
+
 <app-movie-form></app-movie-form>
