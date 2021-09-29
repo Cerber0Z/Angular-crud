@@ -22,10 +22,11 @@ class Server {
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended:false}))
+       
     }
-
-    routes(): void {
     
+    routes(): any {
+        this.app.use(express.static('public'))
         this.app.use('/appi/movie',movieRoutes); //prefijo
         this.app.get('*', (req, res) =>{
             res.sendFile(path.join(__dirname, 'public/index.html'));

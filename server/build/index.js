@@ -23,6 +23,7 @@ class Server {
         this.app.use(express_1.default.urlencoded({ extended: false }));
     }
     routes() {
+        this.app.use(express_1.default.static('public'));
         this.app.use('/appi/movie', movieRoutes_1.default); //prefijo
         this.app.get('*', (req, res) => {
             res.sendFile(path_1.default.join(__dirname, 'public/index.html'));
