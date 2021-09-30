@@ -7,7 +7,7 @@ import { Movie } from '../models/Movies'
 })
 export class MoviesService {
 
-  API_URI = 'http://localhost:4000/appi';
+  API_URI = 'https://angular-crud-movie.herokuapp.com/appi';
 
   constructor(private http:HttpClient) { }
 
