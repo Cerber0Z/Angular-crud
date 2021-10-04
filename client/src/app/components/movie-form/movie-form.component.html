@@ -3,14 +3,14 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Película</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Agregar nueva película</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
             <form >
                 <div class="form-group">
                     <div class="form-group">
-                        <input type="text" name="titleP" [(ngModel)]="movie.mov_title" class="form-control" ng-model="titleP" placeholder="Titulo de la pelicula" ng-required="titleP">
+                        <input type="text" name="titleP" [(ngModel)]="movie.mov_title" class="form-control" ng-model="titleP" placeholder="Título de la película" ng-required="titleP">
                     </div>    
                      <div class="form-group">
                         <input type="number" name="year" [(ngModel)]="movie.mov_year" class="form-control" placeholder="Año">
@@ -30,7 +30,7 @@
                 </div>
                   
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" (click)="saveNewMovie()">Save changes</button>
+                    <button type="button" class="btn btn-primary" (click)="saveNewMovie()">Guardar cambios</button>
                   </div>
               </form>
         </div>

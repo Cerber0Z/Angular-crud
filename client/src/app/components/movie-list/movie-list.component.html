@@ -1,5 +1,6 @@
 <!-- " -->
-<table id="datatable-buttons" class="table table-hover table-bordered" >
+<div class="container">
+<table id="datatable-buttons" class="table table-bordered " >
     <thead class="table-dark">
       <tr>
         <th scope="col">Película id</th>
@@ -56,9 +57,10 @@
                     </div>
                 </div>
                   
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" (click)="updateMovie()" >Editar</button>
-                  </div>
+                
+                  <button type="button" class="btn btn-danger btn- outline-dark btn-circle btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                    </button>
+               
               </form>
         </div>
   
@@ -70,11 +72,14 @@
     </tbody>
     
   </table>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
+  <div class="btn d-flex justify-content-end ">
+  <button type="button" class="btn btn-danger btn-circle btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fas fa-plus"></i>
   </button>
+  </div>
   
 
 
 
 <app-movie-form></app-movie-form>
+</div>
